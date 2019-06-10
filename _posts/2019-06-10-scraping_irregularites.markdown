@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Scraping Irregularites"
-date:       2019-06-10 14:56:29 +0000
+date:       2019-06-10 10:56:30 -0400
 permalink:  scraping_irregularites
 ---
 
