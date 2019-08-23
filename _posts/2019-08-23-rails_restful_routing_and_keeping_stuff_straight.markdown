@@ -42,7 +42,7 @@ The final action is to *Destroy*, which would delete a given record.
 
 Rails provides "shortcut notations" for routing to these different actions.  One can find out which routes in the folder that the rails app is in by typing "rails routes".  (An easier way 
 
-These actions can be used not just for entering, editing and displaying records in a database but for implementing a system for logins and logouts.  A user login could be implemented by checking for login information -- using the New and Create Action-- to creat a new session.  The logout would be implemented by the Destroy action and clearing the session.  I used a Session controller to implement logins and logouts in such a way.
+These actions can be used not just for entering, editing and displaying records in a database but for implementing a system for logins and logouts.  A user login could be implemented by authenticating for login information and then  using the New and Create Action to create a new Session.  (One common way would be to set a user_id key in the Session hash, where the presence of the user_id key would indicate that the user with that user_id is logged in).  The logout would be implemented by the Destroy action and clearing the session.  I used a Session controller to implement logins and logouts in such a way.
 
 In summary, Rails routing allows the developer to implement a web app with editing, reading, creating, updating and deleting from a database, as well as other routing in a fairly simple straightforward manner.
 
