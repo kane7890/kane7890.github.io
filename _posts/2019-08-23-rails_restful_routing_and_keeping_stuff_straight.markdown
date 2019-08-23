@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Rails, RESTful Routing and Keeping Stuff Straight"
-date:       2019-08-23 17:24:19 +0000
+date:       2019-08-23 13:24:20 -0400
 permalink:  rails_restful_routing_and_keeping_stuff_straight
 ---
 
