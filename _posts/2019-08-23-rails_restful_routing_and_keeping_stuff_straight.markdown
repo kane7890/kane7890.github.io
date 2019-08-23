@@ -1,12 +1,12 @@
 ---
 layout: post
-title:      "Rails, RESTful Routing and Keeping Stuff Straight"
+title:      "Rails and Keeping Routes Straight in Portfolio Project"
 date:       2019-08-23 13:24:20 -0400
 permalink:  rails_restful_routing_and_keeping_stuff_straight
 ---
 
 
-While building this Rails Portfolio Project, I found it challenging to keep straight the different routes, controllers and views, although i found the Rails framework to be fairly useful.  In Rails, the application developer can simply tell the server to create routes, which are similar to map instructions telling where the server to go when navigating a web page.  These routes are implemented as "actions" and each action is further specified using a Ruby method in a Ruby controller files.  More complex servers could have multiple controllers. So when a user navigates to a Rails server, the server could be enabled to perform the following actions with an underlying database or databases (via ActiveRecord); these are called RESTful actions.  (REST stands for Representation State Transfar and is a somewhat standard architecture for structuring how the user moves between web pages and underlying logic when a user clicks on pages and links in a web-based app).  The RESTful routes and actions are as follows:
+While building my  Rails Portfolio Project (which was a purchase rewards/points management system), I found it challenging to keep straight the different routes, controllers and views, although i found the Rails framework to be fairly useful.  In Rails, the application developer can simply tell the server to create routes, which are similar to map instructions telling where the server to go when navigating a web page.  These routes are implemented as "actions" and each action is further specified using a Ruby method in a Ruby controller files.  More complex servers could have multiple controllers. So when a user navigates to a Rails server, the server could be enabled to perform the following actions with an underlying database or databases (via ActiveRecord); these are called RESTful actions.  (REST stands for Representation State Transfar and is a somewhat standard architecture for structuring how the user moves between web pages and underlying logic when a user clicks on pages and links in a web-based app).  The RESTful routes and actions are as follows:
 
 *  Creating a new instance (ActiveRecord effectively uses an instance to interact with a row of a database) through a web interface, editing that instance/row,  (New and Create actions)
 *  Editing that instance/row (Edit and Update actions)
@@ -28,7 +28,7 @@ Editing a instance/row has a similar flow as the flow for creating a new instanc
 
 *Edit Action (controller logic in Ruby) --> Edit view (edit.html.erb) --> Update Action (controller logic in Ruby)*
 
-The user is also often redirected or routed to a Show view page (see below) after Update Action code has been run.
+The user is also often redirected or routed to a Show view page (see below) after Update Action code has been run.  (I originally used Update Action to for the portion of my project that involved making a purchase, but this was later refactored to use a different route).
 
 Two other routes (and their correspomnding controller actions) are more for displaying data to the user.  The Show action routes to a Show view (show.html.erb) for displaying the data for a single row in the database (again through the use of ActiveRecord to create an instance).  The Index action routes to a Index view (index.view.erb) for displaying a set of records -- and often, all of the records -- in a given database.  
 
@@ -44,7 +44,7 @@ Rails provides "shortcut notations" for routing to these different actions.  One
 
 These actions can be used not just for entering, editing and displaying records in a database but for implementing a system for logins and logouts.  A user login could be implemented by authenticating for login information and then  using the New and Create Action to create a new Session.  (One common way would be to set a user_id key in the Session hash, where the presence of the user_id key would indicate that the user with that user_id is logged in).  The logout would be implemented by the Destroy action and clearing the session.  I used a Session controller to implement logins and logouts in such a way.
 
-In summary, Rails routing allows the developer to implement a web app with editing, reading, creating, updating and deleting from a database, as well as other routing in a fairly simple straightforward manner.
+In summary, Rails routing allows the developer to implement a web app with editing, reading, creating, updating and deleting from a database, as well as other routing in a fairly simple straightforward manner.  I used the New and Create Actions to create users in the Users Controller, and also to log in users for the Sessions Controller.  I used the Show in the User Controller to display user information.  I used the New Action also to create new purchases for the user in the Purchases Controller, and used the Index Action to display all purchases for a given user (as well as all purchases for all of the users).
 
 
 
