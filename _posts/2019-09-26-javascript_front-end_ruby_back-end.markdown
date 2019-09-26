@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "JavaScript front-end + Ruby back-end"
-date:       2019-09-26 17:49:05 +0000
+date:       2019-09-26 13:49:06 -0400
 permalink:  javascript_front-end_ruby_back-end
 ---
 
